@@ -1,0 +1,176 @@
+/* Fullscreen intro */
+.intro-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    color: white;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+    transition: background-image 1s ease-in-out;
+  }
+  
+  .intro-text {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 90%;
+    margin: 0 auto;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .chatbot-container {
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    min-height: 100vh; /* Ensure it fills the screen */
+    opacity: 0; /* Initially hidden */
+    position: relative;
+    transition: opacity 1s ease-in-out; /* Fade in effect */
+    z-index: 1; /* Ensures it's above other content */
+  }
+  
+  .chatbot-area {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    background-color: #0e0d61;
+    margin-left: -600px;
+    margin-top: 150px; /* Adjust to move chatbot area down */
+    height: 500px; /* Fixed height for the entire chatbot area */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .chatbot-messages {
+    display: flex;
+    flex-direction: column;
+    max-height: 350px; /* Limit the height of the message area */
+    overflow-y: auto; /* Make the messages area scrollable */
+    margin-bottom: 20px;
+    flex-grow: 1; /* Allows the message area to grow */
+  }
+  
+  .chef-bot-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .chef-bot {
+    width: 120px;
+    height: auto;
+    border-radius: 50%; /* Optional: Makes the image circular */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .speech-bubble {
+    background: #f9f9f9;
+    border-radius: 10px;
+    padding: 10px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    margin-top: -20px; /* Overlaps the bot image slightly */
+    max-width: 250px;
+  }
+  
+  .speech-bubble p {
+    margin: 0;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .speech-bubble:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-top-color: #f9f9f9;
+  }
+  
+  .message {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 8px;
+  }
+  
+  .message.user {
+    background-color: #d1e7dd;
+    align-self: flex-end;
+  }
+  
+  .message.bot {
+    background-color: #f8d7da;
+    align-self: flex-start;
+  }
+  
+  .input-field {
+    width: calc(100% - 90px);
+    padding: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+  }
+  
+  .ask-foodbot-button {
+    padding: 10px 15px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .ask-foodbot-button:hover {
+    background: #0056b3;
+  }
+  
+  .loading-spinner {
+    text-align: center;
+    color: #555;
+    font-size: 14px;
+  }
+  
+  /* Loading animation for intro text */
+  @keyframes introTextFadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* To create the intro text fade-in effect */
+  .intro-text {
+    animation: introTextFadeIn 2s ease-out;
+  }
+  
+  /* Scrollbar styling */
+  .chatbot-messages::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .chatbot-messages::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+  }
+  
+  .chatbot-messages::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+  
